@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GIS</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_list_info">宽带攻防</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_poi_map">PoiMapActivity</string>
+    <string name="title_activity_acceleration_list">AccelerationListActivity</string>
+    <string name="title_activity_list_acceleration">ListAccelerationActivity</string>
+    <string name="title_activity_list_renewal">ListRenewalActivity</string>
+    <string name="title_activity_map_acceleration">MapAccelerationActivity</string>
+    <string name="title_activity_map_renewal">续约</string>
+
+</resources>

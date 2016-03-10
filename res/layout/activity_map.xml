@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+<!--     <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" /> -->
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_bar"
+        android:clickable="true" />
+    
+	<RelativeLayout
+        android:id="@+id/search_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="#00ffffff" >
+	    
+		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/main_map_btn_bg_normal" >
+	    </LinearLayout>
+	</RelativeLayout>
+    
+	<RelativeLayout
+        android:id="@+id/tab_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/title_bar"
+        android:background="#00ffffff" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="33dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:background="@drawable/tab_bar_background" >
+
+            <Button
+                android:id="@+id/tab_1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/tab_selector"
+                android:ems="4"
+                android:gravity="center"
+                android:text="营销"
+                android:textColor="@color/tab_text_color_top"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:background="#3598db" />
+
+            <Button
+                android:id="@+id/tab_2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/tab_selector"
+                android:ems="4"
+                android:gravity="center"
+                android:text="欠费"
+                android:textColor="@color/tab_text_color_top"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:background="#3598db" />
+
+            <Button
+                android:id="@+id/tab_3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/tab_selector"
+                android:ems="4"
+                android:gravity="center"
+                android:text="续约"
+                android:textColor="@color/tab_text_color_top"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:background="#3598db" />
+
+            <Button
+                android:id="@+id/tab_4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/tab_selector"
+                android:ems="4"
+                android:gravity="center"
+                android:text="提速"
+                android:textColor="@color/tab_text_color_top"
+                android:textSize="14.0sp" />
+        </LinearLayout>
+    </RelativeLayout>   
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="bottom" >
+
+        <RelativeLayout
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp" >
+            <ImageButton
+                android:id="@+id/locateBtn"
+                android:layout_width="38.0dp"
+                android:layout_height="38.0dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/main_map_button_bg"
+                android:contentDescription="位置"
+                android:gravity="center"
+                android:src="@drawable/ft_loc_normal" />
+            <ProgressBar
+                android:id="@+id/locProgress"
+                style="@style/LocationProgressStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zoomContainer"
+            android:layout_toRightOf="@id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginRight="5dp" >
+            <ImageButton
+                android:id="@+id/zoominBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/zoomin_btn"
+                android:contentDescription="放大" />
+            <ImageButton
+                android:id="@+id/zoomoutBtn"
+                android:layout_below="@+id/zoominBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"                
+                android:background="@drawable/zoomout_btn"
+                android:contentDescription="缩小" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

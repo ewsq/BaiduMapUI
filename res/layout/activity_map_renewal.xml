@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipChildren="false"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+
+    <include android:id="@+id/title_bar" layout="@layout/title_bar"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_pager"
+        android:layout_below="@id/title_bar"
+        android:gravity="bottom" >
+
+        <RelativeLayout
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="5dp" >
+
+            <ImageButton
+                android:id="@+id/locateBtn"
+                android:layout_width="38.0dp"
+                android:layout_height="38.0dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/main_map_button_bg"
+                android:contentDescription="位置"
+                android:gravity="center"
+                android:src="@drawable/ft_loc_normal" />
+
+            <ProgressBar
+                android:id="@+id/locProgress"
+                style="@style/LocationProgressStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zoomContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/location" >
+
+            <ImageButton
+                android:id="@+id/zoominBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/zoomin_btn"
+                android:contentDescription="放大" />
+
+            <ImageButton
+                android:id="@+id/zoomoutBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/zoominBtn"
+                android:background="@drawable/zoomout_btn"
+                android:contentDescription="缩小" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.ctc.gis.GalleryViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:clipChildren="false" >
+    </com.ctc.gis.GalleryViewPager>
+
+</RelativeLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipChildren="false"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+
+	<LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/main_map_btn_bg_normal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+		<AutoCompleteTextView
+		    android:id="@+id/keywords"
+		    android:layout_width="wrap_content"
+		    android:layout_height="40dp"
+		    android:layout_weight="1"
+		    android:layout_marginLeft="10dp"
+		    android:gravity="center_vertical"
+		    android:background="@drawable/main_map_btn_bg_normal"
+		    android:ems="10"
+		    android:hint="搜地点、找网格、查接入号"
+		    android:textColor="@color/grey"
+		    android:textSize="16sp" >
+		    <requestFocus />
+		</AutoCompleteTextView>
+	    
+		<View
+            android:layout_width="1dp"
+            android:layout_height="36dp"
+			android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/grey_pressed" />
+		
+        <ImageButton
+            android:id="@+id/imgbtn_search"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:src="@drawable/magnifier"
+            android:background="@drawable/tab_selector" />
+
+    </LinearLayout>
+    
+    
+<!--     <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/main_map_btn_bg_normal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/magnifier" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜地点、找网格、查接入号"
+            android:textSize="18sp" />
+    </LinearLayout> -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_pager"
+        android:layout_below="@id/search_bar"
+        android:gravity="bottom" >
+
+        <RelativeLayout
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="5dp" >
+
+            <ImageButton
+                android:id="@+id/locateBtn"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/main_map_button_bg"
+                android:contentDescription="位置"
+                android:gravity="center"
+                android:src="@drawable/ft_loc_normal" />
+
+            <ProgressBar
+                android:id="@+id/locProgress"
+                style="@style/LocationProgressStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/zoomContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/location" >
+
+            <ImageButton
+                android:id="@+id/zoominBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/zoomin_btn"
+                android:contentDescription="放大" />
+
+            <ImageButton
+                android:id="@+id/zoomoutBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/zoominBtn"
+                android:background="@drawable/zoomout_btn"
+                android:contentDescription="缩小" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.ctc.gis.GalleryViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:clipChildren="false" >
+    </com.ctc.gis.GalleryViewPager>
+
+</RelativeLayout>
