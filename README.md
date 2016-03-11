@@ -10,7 +10,6 @@
 
 3、搜索框可进行poi检索，以列表/地图方式展现，地图展现时可左右滑动，利用FragmentStatePagerAdapter实现
 
-<img src="https://github.com/lixxvsky/BaiduMapUI/blob/master/res/drawable-xxhdpi/Screenshot_2016-03-11-10-10-22.jpeg" width="35%" height="35%" />
-
+<img src="https://github.com/lixxvsky/BaiduMapUI/blob/master/res/drawable-xxhdpi/Screenshot_2016-03-11-10-10-22.jpeg" width="35%" height="35%" />  
 
 <img src="https://github.com/lixxvsky/BaiduMapUI/blob/master/res/drawable-xxhdpi/Screenshot_2016-03-11-10-11-11.jpeg" width="35%" height="35%" />
